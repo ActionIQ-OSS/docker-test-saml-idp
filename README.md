@@ -18,12 +18,12 @@ The contained version of SimpleSAMLphp is 1.15.2.
 docker run --name=test-saml-idp \
 -p 8080:8080 \
 -p 8443:8443 \
--e SIMPLESAMLPHP_SP_ENTITY_ID=<ENTITY_ID> \
--e SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE=<ACS> \
+-e SIMPLESAMLPHP_SP_ENTITY_ID=ENTITY_ID \
+-e SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE=ACS \
 -d actioniq/test-saml-idp
 ```
 
-ENTITY_ID and ACS should both be the full URL of the IdP instance, eg `http://localhost:9000/sso/test_customer`
+`ENTITY_ID` and `ACS` should both be the full URL of the IdP instance, eg `http://localhost:9000/sso/test_customer`
 
 There are two static users configured in the IdP with the following data:
 
@@ -32,7 +32,7 @@ There are two static users configured in the IdP with the following data:
 | user1 | user1pass | user1@example.com |
 | user2 | user2pass | user2@example.com |
 
-However you can define your own users by mounting a configuration file:
+However, you can define your own users by mounting a configuration file:
 
 ```
 -v /users.php:/var/www/simplesamlphp/config/authsources.php
@@ -42,7 +42,7 @@ You can access the SimpleSAMLphp web interface of the IdP under `http://localhos
 
 To use this for IdP-initiated requests, navigate to:
 ```
-http://localhost:8080/simplesaml/saml2/idp/SSOService.php?spentityid=<ENTITY_ID>
+http://localhost:8080/simplesaml/saml2/idp/SSOService.php?spentityid=ENTITY_ID
 ```
 
 ## Build and Push
