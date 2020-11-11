@@ -1,3 +1,8 @@
+## 2020-11-11 v1.15.2-2
+* Forked by Alex for AIQ usage
+* Changes user profile info
+* Updated .gitignore
+
 ## 2018-02-04 v1.15.2-1
 
 * Changed PHP version to 7.1 instead of 7.x because of compatibility issues.
